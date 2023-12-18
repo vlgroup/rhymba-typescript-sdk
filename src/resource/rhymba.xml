@@ -1,0 +1,196 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+<edmx:DataServices>
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Rhymba">
+<EntityType Name="Album">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.Int32" Nullable="false" />
+<Property Name="name" Type="Edm.String" />
+<Property Name="upc" Type="Edm.String" />
+<Property Name="is_explicit" Type="Edm.Boolean" Nullable="false" />
+<Property Name="volume_number" Type="Edm.Int32" Nullable="false" />
+<Property Name="has_cover" Type="Edm.Boolean" Nullable="false" />
+<Property Name="number_of_tracks" Type="Edm.Int32" Nullable="false" />
+<Property Name="status_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="date_added" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="date_updated" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="street_date" Type="Edm.DateTimeOffset" />
+<Property Name="release_date" Type="Edm.DateTimeOffset" />
+<Property Name="original_release_date" Type="Edm.DateTimeOffset" />
+<Property Name="date_deleted" Type="Edm.DateTimeOffset" />
+<Property Name="artist_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="artist_name" Type="Edm.String" />
+<Property
+          Name="artist_date_updated"
+          Type="Edm.DateTimeOffset"
+          Nullable="false"
+        />
+<Property Name="artist_date_added" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="label_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="label_name" Type="Edm.String" />
+<Property Name="provider_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="provider_name" Type="Edm.String" />
+<Property Name="provider_spec_id" Type="Edm.String" />
+<Property Name="price_code_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+<NavigationProperty Name="genres" Type="Collection(Rhymba.Genre)" />
+<NavigationProperty Name="tracks" Type="Collection(Rhymba.Media)" />
+<NavigationProperty Name="geos" Type="Collection(Rhymba.Geo)" />
+</EntityType>
+<ComplexType Name="IQueryable_1OfAlbum" Abstract="true" />
+<EntityType Name="Artist">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.Int32" Nullable="false" />
+<Property Name="name" Type="Edm.String" />
+<Property Name="date_added" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="date_updated" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="catalog_updated" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="language" Type="Edm.String" />
+<Property Name="description" Type="Edm.String" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+<NavigationProperty Name="media_genres" Type="Collection(Rhymba.Genre)" />
+<NavigationProperty Name="media_providers" Type="Collection(Rhymba.Provider)" />
+</EntityType>
+<ComplexType Name="IQueryable_1OfArtist" Abstract="true" />
+<EntityType Name="Genre">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.Int32" Nullable="false" />
+<Property Name="name" Type="Edm.String" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+</EntityType>
+<EntityType Name="Geo">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.String" Nullable="false" />
+<Property Name="country_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="country_name" Type="Edm.String" />
+<Property Name="country_code" Type="Edm.String" />
+<Property Name="currency_code" Type="Edm.String" />
+<Property Name="status_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="domainsum" Type="Edm.Int32" Nullable="false" />
+<Property Name="price_code_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="price_code" Type="Edm.String" />
+<Property Name="price" Type="Edm.Decimal" Nullable="false" Scale="Variable" />
+<Property
+          Name="max_retail_price"
+          Type="Edm.Decimal"
+          Nullable="false"
+          Scale="Variable"
+        />
+<Property
+          Name="surcharge"
+          Type="Edm.Decimal"
+          Nullable="false"
+          Scale="Variable"
+        />
+<Property Name="street_date" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="release_date" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+</EntityType>
+<EntityType Name="Media">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.Int32" Nullable="false" />
+<Property Name="title" Type="Edm.String" />
+<Property Name="length" Type="Edm.Decimal" Nullable="false" Scale="Variable" />
+<Property Name="isrc" Type="Edm.String" />
+<Property Name="genre_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="genre_name" Type="Edm.String" />
+<Property Name="is_explicit" Type="Edm.Boolean" Nullable="false" />
+<Property Name="track_number" Type="Edm.Int32" Nullable="false" />
+<Property Name="volume_number" Type="Edm.Int32" Nullable="false" />
+<Property Name="status_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="artist_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="artist_name" Type="Edm.String" />
+<Property
+          Name="artist_date_updated"
+          Type="Edm.DateTimeOffset"
+          Nullable="false"
+        />
+<Property Name="artist_date_added" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="album_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_name" Type="Edm.String" />
+<Property Name="album_upc" Type="Edm.String" />
+<Property Name="album_provider_spec_id" Type="Edm.String" />
+<Property Name="album_label_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_provider_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_provider_name" Type="Edm.String" />
+<Property Name="album_artist_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_is_explicit" Type="Edm.Boolean" Nullable="false" />
+<Property Name="album_status_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_volume_number" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_number_of_tracks" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_street_date" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property
+          Name="album_release_date"
+          Type="Edm.DateTimeOffset"
+          Nullable="false"
+        />
+<Property Name="album_genre_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_genre_name" Type="Edm.String" />
+<Property Name="provider_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="date_added" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="date_updated" Type="Edm.DateTimeOffset" Nullable="false" />
+<Property Name="street_date" Type="Edm.DateTimeOffset" />
+<Property Name="release_date" Type="Edm.DateTimeOffset" />
+<Property Name="original_release_date" Type="Edm.DateTimeOffset" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+<NavigationProperty Name="geos" Type="Collection(Rhymba.Geo)" />
+</EntityType>
+<ComplexType Name="IQueryable_1OfMedia" Abstract="true" />
+<EntityType Name="Provider">
+<Key>
+<PropertyRef Name="id" />
+</Key>
+<Property Name="id" Type="Edm.Int32" Nullable="false" />
+<Property Name="name" Type="Edm.String" />
+<Property Name="score" Type="Edm.Single" Nullable="false" />
+</EntityType>
+<Function Name="Get" IsBound="true">
+<Parameter Name="bindingParameter" Type="Collection(Rhymba.Album)" />
+<Parameter Name="keyword" Type="Edm.String" />
+<Parameter Name="id_cdl" Type="Edm.String" />
+<Parameter Name="full_search" Type="Edm.Boolean" Nullable="false" />
+<ReturnType Type="Rhymba.IQueryable_1OfAlbum" />
+</Function>
+<Function Name="Get" IsBound="true">
+<Parameter Name="bindingParameter" Type="Collection(Rhymba.Artist)" />
+<Parameter Name="keyword" Type="Edm.String" />
+<Parameter Name="id_cdl" Type="Edm.String" />
+<Parameter Name="full_search" Type="Edm.Boolean" Nullable="false" />
+<ReturnType Type="Rhymba.IQueryable_1OfArtist" />
+</Function>
+<Function Name="Get" IsBound="true">
+<Parameter Name="bindingParameter" Type="Collection(Rhymba.Media)" />
+<Parameter Name="keyword" Type="Edm.String" />
+<Parameter Name="id_cdl" Type="Edm.String" />
+<Parameter Name="full_search" Type="Edm.Boolean" Nullable="false" />
+<ReturnType Type="Rhymba.IQueryable_1OfMedia" />
+</Function>
+<EntityContainer Name="RhymbaEntitySets">
+<EntitySet Name="Albums" EntityType="Rhymba.Album">
+<NavigationPropertyBinding Path="genres" Target="Genres" />
+<NavigationPropertyBinding Path="geos" Target="Geos" />
+<NavigationPropertyBinding Path="tracks" Target="Medias" />
+</EntitySet>
+<EntitySet Name="Artists" EntityType="Rhymba.Artist">
+<NavigationPropertyBinding Path="media_genres" Target="Genres" />
+<NavigationPropertyBinding Path="media_providers" Target="Providers" />
+</EntitySet>
+<EntitySet Name="Genres" EntityType="Rhymba.Genre" />
+<EntitySet Name="Geos" EntityType="Rhymba.Geo" />
+<EntitySet Name="Medias" EntityType="Rhymba.Media">
+<NavigationPropertyBinding Path="geos" Target="Geos" />
+</EntitySet>
+<EntitySet Name="Providers" EntityType="Rhymba.Provider" />
+</EntityContainer>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>
