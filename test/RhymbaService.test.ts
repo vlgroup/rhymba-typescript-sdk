@@ -4,6 +4,9 @@ import { FetchClient } from '@odata2ts/http-client-fetch';
 
 xdescribe('My Rhymba Tests', () => {
   // TODO: mock FetchClient, add additional tests
+  test(
+    'Dummy Test'
+  )
   // comment out test, as FetchClient test fails on older Node versions
   /*
   const BASE_URL = o2tsConfig.services!['rhymba'].sourceUrl!;
