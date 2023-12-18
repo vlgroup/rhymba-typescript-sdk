@@ -1,5 +1,5 @@
 {
-  "name": "@vlgroup/rhymba",
+  "name": "@vlgroup/rhymba-typescript-sdk",
   "version": "1.0.0",
   "description": "",
   "main": "dist/cjs/index.js",
