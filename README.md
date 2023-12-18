@@ -8,6 +8,7 @@ It uses npm, TypeScript compiler, Jest, webpack, ESLint, Prettier, husky, pinst,
 
 #Documentation
 [Typescript SDK Documentation](https://documentation.vlgroup.com/sdk/typescript)
+
 [General instructions](https://documentation.vlgroup.com/) for the Rhymba API.
 
 Sign Up for the [Rhymba API](https://rhymbamanager.vlgroup.com/APISignup).
