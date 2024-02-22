@@ -499,6 +499,65 @@ export enum ScalingType {
   
       return outUrl;
     }
+
+    getArtistImage(
+        artistId: string,
+        width?: number,
+        height?: number,
+        scaling?: ScalingType,
+        cropping?: CroppingType,
+        reflection?: ReflectionProperties,
+        default404?: boolean,
+        defaultFileName?: string
+      ): string | undefined {
+        if (artistId === undefined) {
+          return undefined;
+        }
+        default404 = default404 ?? false;
+    
+        var outUrl = this.imageBankUrl + '/';
+        if (scaling !== undefined) {
+          outUrl += 'scl/' + scaling + '/';
+        }
+        if (cropping !== undefined) {
+          outUrl += 'crp/' + cropping + '/';
+        }
+        if (width !== undefined && height !== undefined) {
+          outUrl += 'sz/' + width + '/' + height + '/';
+        }
+        // rfl/0/30/45/2/20
+        // Percent Reflection / Clipping Percent / Alpha / Angle / Gap.
+        if (
+          reflection !== undefined &&
+          reflection.reflectionPercent !== undefined &&
+          reflection.clippingPercent !== undefined &&
+          reflection.alpha !== undefined &&
+          reflection.angle !== undefined &&
+          reflection.gap !== undefined
+        ) {
+          outUrl +=
+            'rfl/' +
+            reflection.reflectionPercent +
+            '/' +
+            reflection.clippingPercent +
+            '/' +
+            reflection.alpha +
+            '/' +
+            reflection.angle +
+            '/' +
+            reflection.gap +
+            '/';
+        }
+        outUrl += artistId + '.artist';
+        if (default404) {
+          outUrl += '?dflt=404';
+        } else if (defaultFileName !== undefined) {
+          outUrl += '?dflt=' + defaultFileName;
+        }
+    
+        return outUrl;
+      }
+    }
   }
   
   export class Preview {
