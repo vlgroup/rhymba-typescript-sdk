@@ -741,6 +741,16 @@ export interface Media {
    * OData Attributes:
    * |Attribute Name | Attribute Value |
    * | --- | ---|
+   * | Name | `bitrate` |
+   * | Type | `Edm.Int32` |
+   * | Nullable | `false` |
+   */
+  bitrate: number;
+  /**
+   *
+   * OData Attributes:
+   * |Attribute Name | Attribute Value |
+   * | --- | ---|
    * | Name | `artist_id` |
    * | Type | `Edm.Int32` |
    * | Nullable | `false` |
@@ -822,6 +832,15 @@ export interface Media {
    * | Nullable | `false` |
    */
   album_label_id: number;
+  /**
+   *
+   * OData Attributes:
+   * |Attribute Name | Attribute Value |
+   * | --- | ---|
+   * | Name | `album_label_name` |
+   * | Type | `Edm.String` |
+   */
+  album_label_name: string | null;
   /**
    *
    * OData Attributes:
@@ -992,6 +1011,26 @@ export interface Media {
    * OData Attributes:
    * |Attribute Name | Attribute Value |
    * | --- | ---|
+   * | Name | `popularity_score_ever` |
+   * | Type | `Edm.Int32` |
+   * | Nullable | `false` |
+   */
+  popularity_score_ever: number;
+  /**
+   *
+   * OData Attributes:
+   * |Attribute Name | Attribute Value |
+   * | --- | ---|
+   * | Name | `popularity_score_month` |
+   * | Type | `Edm.Int32` |
+   * | Nullable | `false` |
+   */
+  popularity_score_month: number;
+  /**
+   *
+   * OData Attributes:
+   * |Attribute Name | Attribute Value |
+   * | --- | ---|
    * | Name | `score` |
    * | Type | `Edm.Single` |
    * | Nullable | `false` |
@@ -1019,6 +1058,7 @@ export interface EditableMedia
       | 'track_number'
       | 'volume_number'
       | 'status_id'
+      | 'bitrate'
       | 'artist_id'
       | 'artist_date_updated'
       | 'artist_date_added'
@@ -1036,6 +1076,8 @@ export interface EditableMedia
       | 'provider_id'
       | 'date_added'
       | 'date_updated'
+      | 'popularity_score_ever'
+      | 'popularity_score_month'
       | 'score'
     >,
     Partial<
@@ -1048,6 +1090,7 @@ export interface EditableMedia
         | 'album_name'
         | 'album_upc'
         | 'album_provider_spec_id'
+        | 'album_label_name'
         | 'album_provider_name'
         | 'album_genre_name'
         | 'street_date'

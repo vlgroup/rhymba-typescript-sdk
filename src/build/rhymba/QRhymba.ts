@@ -258,6 +258,7 @@ export class QMedia extends QueryObject {
     this.withPrefix('volume_number')
   );
   public readonly status_id = new QNumberPath(this.withPrefix('status_id'));
+  public readonly bitrate = new QNumberPath(this.withPrefix('bitrate'));
   public readonly artist_id = new QNumberPath(this.withPrefix('artist_id'));
   public readonly artist_name = new QStringPath(this.withPrefix('artist_name'));
   public readonly artist_date_updated = new QDateTimeOffsetPath(
@@ -274,6 +275,9 @@ export class QMedia extends QueryObject {
   );
   public readonly album_label_id = new QNumberPath(
     this.withPrefix('album_label_id')
+  );
+  public readonly album_label_name = new QStringPath(
+    this.withPrefix('album_label_name')
   );
   public readonly album_provider_id = new QNumberPath(
     this.withPrefix('album_provider_id')
@@ -323,6 +327,12 @@ export class QMedia extends QueryObject {
   );
   public readonly original_release_date = new QDateTimeOffsetPath(
     this.withPrefix('original_release_date')
+  );
+  public readonly popularity_score_ever = new QNumberPath(
+    this.withPrefix('popularity_score_ever')
+  );
+  public readonly popularity_score_month = new QNumberPath(
+    this.withPrefix('popularity_score_month')
   );
   public readonly score = new QNumberPath(this.withPrefix('score'));
   public readonly geos = new QEntityCollectionPath(

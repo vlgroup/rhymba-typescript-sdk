@@ -9,7 +9,7 @@ export class Search {
   private rhymbaUrl = o2tsConfig.services!['rhymba'].sourceUrl!;
   private rhymbaAccessToken: string;
   private httpClient: FetchClient;
-  private service: RhymbaService<FetchClient>;
+  service: RhymbaService<FetchClient>;
 
   constructor(accessToken: string) {
     this.rhymbaAccessToken = accessToken;

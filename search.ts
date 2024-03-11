@@ -9,12 +9,12 @@ export class Search {
   private rhymbaUrl = o2tsConfig.services!['rhymba'].sourceUrl!;
   private rhymbaAccessToken: string;
   private httpClient: FetchClient;
-  private service: RhymbaService<FetchClient>;
+  service: RhymbaService<FetchClient>;
 
   constructor(accessToken: string) {
     this.rhymbaAccessToken = accessToken;
     this.httpClient = new FetchClient({
-      params: { access_token: this.rhymbaAccessToken },
+      params: { access_token: this.rhymbaAccessToken }
     });
     this.service = new RhymbaService(this.httpClient, this.rhymbaUrl);
   }
@@ -90,8 +90,8 @@ export class Search {
         {
           params: {
             id_cdl: "'" + JSON.stringify(id_cdl) + "'",
-            access_token: this.rhymbaAccessToken,
-          },
+            access_token: this.rhymbaAccessToken
+          }
         }
       )
       .then((media) => {
@@ -120,8 +120,8 @@ export class Search {
         {
           params: {
             keyword: "'" + encodeURIComponent(keyword) + "'",
-            access_token: this.rhymbaAccessToken,
-          },
+            access_token: this.rhymbaAccessToken
+          }
         }
       )
       .then((media) => {
@@ -312,8 +312,8 @@ export class Search {
         {
           params: {
             keyword: "'" + encodeURIComponent(keyword) + "'",
-            access_token: this.rhymbaAccessToken,
-          },
+            access_token: this.rhymbaAccessToken
+          }
         }
       )
       .then((album) => {
@@ -386,8 +386,8 @@ export class Search {
         {
           params: {
             keyword: "'" + encodeURIComponent(keyword) + "'",
-            access_token: this.rhymbaAccessToken,
-          },
+            access_token: this.rhymbaAccessToken
+          }
         }
       )
       .then((artist) => {

@@ -107,6 +107,7 @@
 <Property Name="track_number" Type="Edm.Int32" Nullable="false" />
 <Property Name="volume_number" Type="Edm.Int32" Nullable="false" />
 <Property Name="status_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="bitrate" Type="Edm.Int32" Nullable="false" />
 <Property Name="artist_id" Type="Edm.Int32" Nullable="false" />
 <Property Name="artist_name" Type="Edm.String" />
 <Property
@@ -120,6 +121,7 @@
 <Property Name="album_upc" Type="Edm.String" />
 <Property Name="album_provider_spec_id" Type="Edm.String" />
 <Property Name="album_label_id" Type="Edm.Int32" Nullable="false" />
+<Property Name="album_label_name" Type="Edm.String" />
 <Property Name="album_provider_id" Type="Edm.Int32" Nullable="false" />
 <Property Name="album_provider_name" Type="Edm.String" />
 <Property Name="album_artist_id" Type="Edm.Int32" Nullable="false" />
@@ -141,6 +143,8 @@
 <Property Name="street_date" Type="Edm.DateTimeOffset" />
 <Property Name="release_date" Type="Edm.DateTimeOffset" />
 <Property Name="original_release_date" Type="Edm.DateTimeOffset" />
+<Property Name="popularity_score_ever" Type="Edm.Int32" Nullable="false" />
+<Property Name="popularity_score_month" Type="Edm.Int32" Nullable="false" />
 <Property Name="score" Type="Edm.Single" Nullable="false" />
 <NavigationProperty Name="geos" Type="Collection(Rhymba.Geo)" />
 </EntityType>
