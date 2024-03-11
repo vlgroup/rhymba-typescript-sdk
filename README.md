@@ -57,7 +57,7 @@ Build your own search using Keyword
 
 ```typescript
 const search = new Search(accessToken);
-const media = search.service.Medias(mediaId).query(
+const media = search.service.Medias().query(
   (builder) => {
     return builder
       .select('id')
@@ -87,7 +87,7 @@ Build your own search using id_cdl
 ```typescript
 const id_cdl = [mediaId1, mediaId2];
 const search = new Search(accessToken);
-const media = search.service.Medias(mediaId).query(
+const media = search.service.Medias().query(
   (builder) => {
     return builder
       .select('id')
